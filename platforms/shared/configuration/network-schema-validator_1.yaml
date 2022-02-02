@@ -20,7 +20,7 @@
         state: present        
         production: no
     - set_fact:
-        tempNetworkyaml: '{ "network": {{ network }} }'
+        tempNetworkyaml: '{ "network": "fabric" }'
     - name: "Ensures build dir exists"
       include_role:
         name: "check/setup"
@@ -31,11 +31,7 @@
       copy:
         content: |
           {{ tempNetworkyaml |to_nice_yaml( width=50, explicit_start=True, explicit_end=True) }}
-        dest: ./temp.yaml             
+        dest: ./build/temp.yaml             
     - name: "run schema validator on network.yaml"
       shell: |
-        ajv validate -s ../../network-schema.json -d ./temp.yaml
-        # - name: Remove the build directory and contents
-        #file:
-        #path: "./build"
-        #state: absent
+        ajv validate -s ../../network-schema.json -d ./build/temp.yaml
