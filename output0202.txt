@@ -735,3 +735,41 @@ TASK [/home/ubuntu/bevel/platforms/hyperledger-fabric/configuration/../../shared
 ok: [localhost]
 
 TASK [/home/ubuntu/bevel/platforms/hyperledger-fabric/configuration/../../shared/configuration/roles/git_push : Execute git push for ssh] ***
+fatal: [localhost]: FAILED! => {"changed": true, "cmd": "cd \"/home/ubuntu/bevel/platforms/hyperledger-fabric/configuration/../../../\"\necho \"---------------GIT PUSH---------------\"\nexport GIT_SSH_COMMAND='ssh -i /home/ubuntu/gitops/gitops'\ngit config user.email hyewoncho17@gmail.com\ngit config user.name hwcho\ngit --git-dir=/home/ubuntu/bevel/platforms/hyperledger-fabric/configuration/../../..//.git add -A .\n\n# To ignore a directory add it add reset path\nreset_path=platforms/hyperledger-fabric/configuration\nif [ -n \"$reset_path\" ]; then\n    git --git-dir=/home/ubuntu/bevel/platforms/hyperledger-fabric/configuration/../../..//.git reset \"platforms/hyperledger-fabric/configuration\"\nfi  \n\ngit --git-dir=/home/ubuntu/bevel/platforms/hyperledger-fabric/configuration/../../..//.git commit -s -m \"[ci skip] Pushing deployment files for namespace, service accounts and clusterrolebinding\" || true\ngit --git-dir=/home/ubuntu/bevel/platforms/hyperledger-fabric/configuration/../../..//.git push https://github.com/hwcho/bevel.git HEAD:develop  \n", "delta": "0:03:03.712857", "end": "2022-02-02 17:13:54.685445", "msg": "non-zero return code", "rc": 128, "start": "2022-02-02 17:10:50.972588", "stderr": "remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.\nremote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.\nfatal: Authentication failed for 'https://github.com/hwcho/bevel.git/'", "stderr_lines": ["remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.", "remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.", "fatal: Authentication failed for 'https://github.com/hwcho/bevel.git/'"], "stdout": "---------------GIT PUSH---------------\n[main df0fc028] [ci skip] Pushing deployment files for namespace, service accounts and clusterrolebinding\n 1 file changed, 737 insertions(+)\n create mode 100644 output0202.txt", "stdout_lines": ["---------------GIT PUSH---------------", "[main df0fc028] [ci skip] Pushing deployment files for namespace, service accounts and clusterrolebinding", " 1 file changed, 737 insertions(+)", " create mode 100644 output0202.txt"]}
+...ignoring
+
+TASK [/home/ubuntu/bevel/platforms/hyperledger-fabric/configuration/../../shared/configuration/roles/git_push : Execute git push for https] ***
+skipping: [localhost]
+
+TASK [/home/ubuntu/bevel/platforms/hyperledger-fabric/configuration/../../shared/configuration/roles/git_push : stdout for SSH gitpush] ***
+ok: [localhost] => {
+    "msg": [
+        "---------------GIT PUSH---------------",
+        "[main df0fc028] [ci skip] Pushing deployment files for namespace, service accounts and clusterrolebinding",
+        " 1 file changed, 737 insertions(+)",
+        " create mode 100644 output0202.txt"
+    ]
+}
+
+TASK [/home/ubuntu/bevel/platforms/hyperledger-fabric/configuration/../../shared/configuration/roles/git_push : stderr for SSH gitpush] ***
+ok: [localhost] => {
+    "msg": [
+        "remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.",
+        "remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.",
+        "fatal: Authentication failed for 'https://github.com/hwcho/bevel.git/'"
+    ]
+}
+
+TASK [/home/ubuntu/bevel/platforms/hyperledger-fabric/configuration/../../shared/configuration/roles/git_push : stdout for gitpush] ***
+skipping: [localhost]
+
+TASK [/home/ubuntu/bevel/platforms/hyperledger-fabric/configuration/../../shared/configuration/roles/git_push : stderr for git_push] ***
+skipping: [localhost]
+
+TASK [Checking for the supplychain-net-role-tokenreview-binding] ***************
+
+TASK [/home/ubuntu/bevel/platforms/hyperledger-fabric/configuration/../../shared/configuration/roles/check/k8_component : Check ClusterRoleBinding supplychain-net-role-tokenreview-binding is created] ***
+skipping: [localhost]
+
+TASK [/home/ubuntu/bevel/platforms/hyperledger-fabric/configuration/../../shared/configuration/roles/check/k8_component : Wait for ClusterRoleBinding supplychain-net-role-tokenreview-binding] ***
+FAILED - RETRYING: [localhost]: Wait for ClusterRoleBinding supplychain-net-role-tokenreview-binding (20 retries left).
