@@ -100,7 +100,7 @@ network:
             branch: hello-fabric
             chart_source: platforms/hyperledger-fabric/charts
             email: hyewoncho17@gmail.com
-            git_protocol: https
+            git_protocol: ssh
             git_repo: github.com/hwcho/bevel.git
             git_url: https://github.com/hwcho/bevel.git
             password: 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
@@ -162,7 +162,7 @@ network:
             branch: hello-fabric
             chart_source: platforms/hyperledger-fabric/charts
             email: hyewoncho17@gmail.com
-            git_protocol: https
+            git_protocol: ssh
             git_repo: github.com/hwcho/bevel.git
             git_url: https://github.com/hwcho/bevel.git
             password: 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
@@ -237,7 +237,7 @@ network:
             branch: hello-fabric
             chart_source: platforms/hyperledger-fabric/charts
             email: hyewoncho17@gmail.com
-            git_protocol: https
+            git_protocol: ssh
             git_repo: github.com/hwcho/bevel.git
             git_url: https://github.com/hwcho/bevel.git
             password: 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
@@ -312,7 +312,7 @@ network:
             branch: hello-fabric
             chart_source: platforms/hyperledger-fabric/charts
             email: hyewoncho17@gmail.com
-            git_protocol: https
+            git_protocol: ssh
             git_repo: github.com/hwcho/bevel.git
             git_url: https://github.com/hwcho/bevel.git
             password: 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
@@ -387,7 +387,7 @@ network:
             branch: hello-fabric
             chart_source: platforms/hyperledger-fabric/charts
             email: hyewoncho17@gmail.com
-            git_protocol: https
+            git_protocol: ssh
             git_repo: github.com/hwcho/bevel.git
             git_url: https://github.com/hwcho/bevel.git
             password: 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
