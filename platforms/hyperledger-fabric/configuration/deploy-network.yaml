@@ -25,6 +25,19 @@
         path: "./build"
         state: absent
 
+    - name: Check Namespace Testing
+      k8s_info:
+        api_version: v1
+        kind: "Namespace"
+        name: "blockchain"
+        kubeconfig: "/home/ubuntu/.kube/config"
+        context: "project-49ce1150-besu-cluster"
+      register: result
+    - name: Print Check Namespace Result
+      debug:
+        var: result 
+
+
     # Create Namespaces and Vault-rbac kubernetes-value files
     - name: Create namespace and Vault auth for each organization
       include_role:
