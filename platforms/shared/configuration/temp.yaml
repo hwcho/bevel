@@ -53,9 +53,9 @@ network:
         custom: true
         folder_path: /absolute/path/to/folder
     docker:
-        password: docker_password
-        url: repo.ncsoft.net/docker-remote/hyperledgerlabs
-        username: docker_username
+        password: b70cae3b-8942-4405-ba84-89b759a9e7a8
+        url: index.docker.io/hyperledgerlabs
+        username: ncblockcat
     env:
         ambassadorPorts:
             portRange:
@@ -69,7 +69,7 @@ network:
         external_dns: enabled
         loadBalancerSourceRanges: null
         proxy: none
-        retry_count: 20
+        retry_count: 5
         type: dev
     frontend: enabled
     orderers:
@@ -97,13 +97,13 @@ network:
         external_url_suffix: org1ambassador.blockchaincloudpoc.com
         fabric_console: enabled
         gitops:
-            branch: develop
+            branch: hello-fabric
             chart_source: platforms/hyperledger-fabric/charts
             email: hyewoncho17@gmail.com
-            git_protocol: ssh
+            git_protocol: https
             git_repo: github.com/hwcho/bevel.git
             git_url: https://github.com/hwcho/bevel.git
-            password: git_access_token
+            password: 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
             private_key: /home/ubuntu/gitops/gitops
             release_dir: platforms/hyperledger-fabric/releases/dev
             username: hwcho
@@ -159,13 +159,13 @@ network:
         external_url_suffix: org2ambassador.blockchaincloudpoc.com
         fabric_console: enabled
         gitops:
-            branch: develop
+            branch: hello-fabric
             chart_source: platforms/hyperledger-fabric/charts
             email: hyewoncho17@gmail.com
-            git_protocol: ssh
+            git_protocol: https
             git_repo: github.com/hwcho/bevel.git
             git_url: https://github.com/hwcho/bevel.git
-            password: git_access_token
+            password: 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
             private_key: /home/ubuntu/gitops/gitops
             release_dir: platforms/hyperledger-fabric/releases/dev
             username: hwcho
@@ -234,13 +234,13 @@ network:
         external_url_suffix: org3ambassador.blockchaincloudpoc.com
         fabric_console: disabled
         gitops:
-            branch: develop
+            branch: hello-fabric
             chart_source: platforms/hyperledger-fabric/charts
             email: hyewoncho17@gmail.com
-            git_protocol: ssh
+            git_protocol: https
             git_repo: github.com/hwcho/bevel.git
             git_url: https://github.com/hwcho/bevel.git
-            password: git_access_token
+            password: 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
             private_key: /home/ubuntu/gitops/gitops
             release_dir: platforms/hyperledger-fabric/releases/dev
             username: hwcho
@@ -309,13 +309,13 @@ network:
         external_url_suffix: org3ambassador.blockchaincloudpoc.com
         fabric_console: disabled
         gitops:
-            branch: develop
+            branch: hello-fabric
             chart_source: platforms/hyperledger-fabric/charts
             email: hyewoncho17@gmail.com
-            git_protocol: ssh
+            git_protocol: https
             git_repo: github.com/hwcho/bevel.git
             git_url: https://github.com/hwcho/bevel.git
-            password: git_access_token
+            password: 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
             private_key: /home/ubuntu/gitops/gitops
             release_dir: platforms/hyperledger-fabric/releases/dev
             username: hwcho
@@ -384,13 +384,13 @@ network:
         external_url_suffix: org2ambassador.blockchaincloudpoc.com
         fabric_console: disabled
         gitops:
-            branch: develop
+            branch: hello-fabric
             chart_source: platforms/hyperledger-fabric/charts
             email: hyewoncho17@gmail.com
-            git_protocol: ssh
+            git_protocol: https
             git_repo: github.com/hwcho/bevel.git
             git_url: https://github.com/hwcho/bevel.git
-            password: git_access_token
+            password: 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
             private_key: /home/ubuntu/gitops/gitops
             release_dir: platforms/hyperledger-fabric/releases/dev
             username: hwcho
