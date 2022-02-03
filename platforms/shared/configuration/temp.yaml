@@ -102,7 +102,7 @@ network:
             email: hyewoncho17@gmail.com
             git_protocol: ssh
             git_repo: github.com/hwcho/bevel.git
-            git_url: https://github.com/hwcho/bevel.git
+            git_url: git@github.com:hwcho/bevel.git
             password: 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
             private_key: /home/ubuntu/gitops/gitops
             release_dir: platforms/hyperledger-fabric/releases/dev
@@ -164,7 +164,7 @@ network:
             email: hyewoncho17@gmail.com
             git_protocol: ssh
             git_repo: github.com/hwcho/bevel.git
-            git_url: https://github.com/hwcho/bevel.git
+            git_url: git@github.com:hwcho/bevel.git
             password: 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
             private_key: /home/ubuntu/gitops/gitops
             release_dir: platforms/hyperledger-fabric/releases/dev
@@ -239,7 +239,7 @@ network:
             email: hyewoncho17@gmail.com
             git_protocol: ssh
             git_repo: github.com/hwcho/bevel.git
-            git_url: https://github.com/hwcho/bevel.git
+            git_url: git@github.com:hwcho/bevel.git
             password: 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
             private_key: /home/ubuntu/gitops/gitops
             release_dir: platforms/hyperledger-fabric/releases/dev
@@ -314,7 +314,7 @@ network:
             email: hyewoncho17@gmail.com
             git_protocol: ssh
             git_repo: github.com/hwcho/bevel.git
-            git_url: https://github.com/hwcho/bevel.git
+            git_url: git@github.com:hwcho/bevel.git
             password: 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
             private_key: /home/ubuntu/gitops/gitops
             release_dir: platforms/hyperledger-fabric/releases/dev
@@ -389,7 +389,7 @@ network:
             email: hyewoncho17@gmail.com
             git_protocol: ssh
             git_repo: github.com/hwcho/bevel.git
-            git_url: https://github.com/hwcho/bevel.git
+            git_url: git@github.com:hwcho/bevel.git
             password: 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
             private_key: /home/ubuntu/gitops/gitops
             release_dir: platforms/hyperledger-fabric/releases/dev
