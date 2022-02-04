@@ -1,0 +1,453 @@
+---
+network:
+    channels:
+    -   channel: null
+        channel_name: AllChannel
+        consortium: SupplyChainConsortium
+        genesis:
+            name: OrdererGenesis
+        orderer:
+            name: supplychain
+        participants:
+        -   name: carrier
+            ordererAddress: orderer1.org1ambassador.blockchaincloudpoc.com:8443
+            org_status: new
+            organization: null
+            peers:
+            -   gossipAddress: peer0.carrier-net.org3ambassador.blockchaincloudpoc.com:8443
+                name: peer0
+                peer: null
+                peerAddress: peer0.carrier-net.org3ambassador.blockchaincloudpoc.com:8443
+            type: creator
+        -   name: store
+            ordererAddress: orderer1.org1ambassador.blockchaincloudpoc.com:8443
+            org_status: new
+            organization: null
+            peers:
+            -   gossipAddress: peer0.store-net.org3ambassador.blockchaincloudpoc.com:8443
+                name: peer0
+                peer: null
+                peerAddress: peer0.store-net.org3ambassador.blockchaincloudpoc.com:8443
+            type: joiner
+        -   name: warehouse
+            ordererAddress: orderer1.org1ambassador.blockchaincloudpoc.com:8443
+            org_status: new
+            organization: null
+            peers:
+            -   gossipAddress: peer0.warehouse-net.org2ambassador.blockchaincloudpoc.com:8443
+                name: peer0
+                peer: null
+                peerAddress: peer0.warehouse-net.org3ambassador.blockchaincloudpoc.com:8443
+            type: joiner
+        -   name: manufacturer
+            ordererAddress: orderer1.org1ambassador.blockchaincloudpoc.com:8443
+            org_status: new
+            organization: null
+            peers:
+            -   gossipAddress: peer0.manufacturer-net.org2ambassador.blockchaincloudpoc.com:8443
+                name: peer0
+                peer: null
+                peerAddress: peer0.manufacturer-net.org3ambassador.blockchaincloudpoc.com:8443
+            type: joiner
+    configtx:
+        custom: true
+        folder_path: /absolute/path/to/folder
+    docker:
+        password: b70cae3b-8942-4405-ba84-89b759a9e7a8
+        url: index.docker.io/hyperledgerlabs
+        username: ncblockcat
+    env:
+        ambassadorPorts:
+            portRange:
+                from: 15010
+                to: 15020
+        annotations:
+            deployment: {}
+            pvc: {}
+            service:
+            -   example1: example2
+        external_dns: enabled
+        loadBalancerSourceRanges: null
+        proxy: none
+        retry_count: 5
+        type: dev
+    frontend: enabled
+    orderers:
+    -   certificate: /home/bevel/build/orderer1.crt
+        name: orderer1
+        orderer: null
+        org_name: supplychain
+        type: orderer
+        uri: orderer1.org1ambassador.blockchaincloudpoc.com:8443
+    -   certificate: /home/bevel/build/orderer2.crt
+        name: orderer2
+        orderer: null
+        org_name: supplychain
+        type: orderer
+        uri: orderer2.org1ambassador.blockchaincloudpoc.com:8443
+    organizations:
+    -   aws:
+            access_key: aws_access_key
+            secret_key: aws_secret_key
+        ca_data:
+            certificate: file/server.crt
+            url: ca.supplychain-net.org1ambassador.blockchaincloudpoc.com:8443
+        cloud_provider: minikube
+        country: UK
+        external_url_suffix: org1ambassador.blockchaincloudpoc.com
+        fabric_console: enabled
+        gitops:
+            branch: hello-fabric
+            chart_source: platforms/hyperledger-fabric/charts
+            email: hyewoncho17@gmail.com
+            git_protocol: https
+            git_repo: github.com/hwcho/bevel.git
+            git_url: https://github.com/hwcho/bevel.git
+            password: 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
+            private_key: /home/ubuntu/gitops/gitops
+            release_dir: platforms/hyperledger-fabric/releases/dev
+            username: hwcho
+        k8s:
+            config_file: /home/ubuntu/.kube/config
+            context: project-49ce1150-besu-cluster
+            region: eu-west-1
+        location: London
+        name: supplychain
+        org_status: new
+        organization: null
+        services:
+            ca:
+                grpc:
+                    port: 7054
+                name: ca
+                subject: /C=GB/ST=London/L=London/O=Orderer/CN=ca.supplychain-net.org1ambassador.blockchaincloudpoc.com
+                type: ca
+            consensus:
+                grpc:
+                    port: 9092
+                name: kafka
+                replicas: 4
+                type: broker
+            orderers:
+            -   consensus: kafka
+                grpc:
+                    port: 7050
+                name: orderer1
+                orderer: null
+                type: orderer
+            -   consensus: kafka
+                grpc:
+                    port: 7050
+                name: orderer2
+                orderer: null
+                type: orderer
+        state: London
+        subject: O=Orderer,L=51.50/-0.13/London,C=GB
+        type: orderer
+        vault:
+            root_token: s.NQN6bn4oN7ScNuLnwxB7USgx
+            secret_path: secret
+            url: http://127.0.0.1:9000
+    -   aws:
+            access_key: aws_access_key
+            secret_key: aws_secret_key
+        ca_data:
+            certificate: file/server.crt
+            url: ca.manufacturer-net.org2ambassador.blockchaincloudpoc.com:8443
+        cloud_provider: minikube
+        country: CH
+        external_url_suffix: org2ambassador.blockchaincloudpoc.com
+        fabric_console: enabled
+        gitops:
+            branch: hello-fabric
+            chart_source: platforms/hyperledger-fabric/charts
+            email: hyewoncho17@gmail.com
+            git_protocol: https
+            git_repo: github.com/hwcho/bevel.git
+            git_url: https://github.com/hwcho/bevel.git
+            password: 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
+            private_key: /home/ubuntu/gitops/gitops
+            release_dir: platforms/hyperledger-fabric/releases/dev
+            username: hwcho
+        k8s:
+            config_file: /home/ubuntu/.kube/config
+            context: project-49ce1150-besu-cluster
+            region: eu-west-1
+        location: Zurich
+        name: manufacturer
+        org_status: new
+        organization: null
+        services:
+            ca:
+                grpc:
+                    port: 7054
+                name: ca
+                subject: /C=CH/ST=Zurich/L=Zurich/O=Manufacturer/CN=ca.manufacturer-net.org2ambassador.blockchaincloudpoc.com
+                type: ca
+            peers:
+            -   chaincode:
+                    arguments: chaincode_args
+                    endorsements: ''
+                    lang: golang
+                    maindirectory: chaincode_main
+                    name: chaincode_name
+                    repository:
+                        branch: hello_fabric
+                        password: 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
+                        path: chaincode_src
+                        url: github.com/hwcho/bevel.git
+                        username: hwcho
+                    version: '1'
+                cli: disabled
+                couchdb:
+                    port: 5984
+                events:
+                    port: 7053
+                expressapi:
+                    port: 3000
+                    targetPort: 3000
+                gossippeeraddress: peer0.manufacturer-net:7051
+                grpc:
+                    port: 7051
+                name: peer0
+                peer: null
+                peerAddress: peer0.manufacturer-net.org3ambassador.blockchaincloudpoc.com:8443
+                restserver:
+                    port: 20001
+                    targetPort: 20001
+                type: anchor
+        state: Zurich
+        subject: O=Manufacturer,OU=Manufacturer,L=47.38/8.54/Zurich,C=CH
+        type: peer
+        vault:
+            root_token: s.NQN6bn4oN7ScNuLnwxB7USgx
+            secret_path: secret
+            url: http://127.0.0.1:9000
+    -   aws:
+            access_key: aws_access_key
+            secret_key: aws_secret_key
+        ca_data:
+            certificate: file/server.crt
+            url: ca.carrier-net.org3ambassador.blockchaincloudpoc.com:8443
+        cloud_provider: minikube
+        country: GB
+        external_url_suffix: org3ambassador.blockchaincloudpoc.com
+        fabric_console: disabled
+        gitops:
+            branch: hello-fabric
+            chart_source: platforms/hyperledger-fabric/charts
+            email: hyewoncho17@gmail.com
+            git_protocol: https
+            git_repo: github.com/hwcho/bevel.git
+            git_url: https://github.com/hwcho/bevel.git
+            password: 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
+            private_key: /home/ubuntu/gitops/gitops
+            release_dir: platforms/hyperledger-fabric/releases/dev
+            username: hwcho
+        k8s:
+            config_file: /home/ubuntu/.kube/config
+            context: project-49ce1150-besu-cluster
+            region: eu-west-1
+        location: London
+        name: carrier
+        org_status: new
+        organization: null
+        services:
+            ca:
+                grpc:
+                    port: 7054
+                name: ca
+                subject: /C=GB/ST=London/L=London/O=Carrier/CN=ca.carrier-net.org3ambassador.blockchaincloudpoc.com
+                type: ca
+            peers:
+            -   chaincode:
+                    arguments: chaincode_args
+                    endorsements: ''
+                    lang: golang
+                    maindirectory: chaincode_main
+                    name: chaincode_name
+                    repository:
+                        branch: hello-fabric
+                        password: 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
+                        path: chaincode_src
+                        url: github.com/hwcho/bevel.git
+                        username: hwcho
+                    version: '1'
+                cli: disabled
+                couchdb:
+                    port: 5984
+                events:
+                    port: 7053
+                expressapi:
+                    port: 3000
+                    targetPort: 3000
+                gossippeeraddress: peer0.carrier-net:7051
+                grpc:
+                    port: 7051
+                name: peer0
+                peer: null
+                peerAddress: peer0.carrier-net.org3ambassador.blockchaincloudpoc.com:8443
+                restserver:
+                    port: 20001
+                    targetPort: 20001
+                type: anchor
+        state: London
+        subject: O=Carrier,OU=Carrier,L=51.50/-0.13/London,C=GB
+        type: peer
+        vault:
+            root_token: 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
+            secret_path: secret
+            url: http://127.0.0.1:9000
+    -   aws:
+            access_key: aws_access_key
+            secret_key: aws_secret_key
+        ca_data:
+            certificate: file/server.crt
+            url: ca.store-net.org3ambassador.blockchaincloudpoc.com:8443
+        cloud_provider: minikube
+        country: US
+        external_url_suffix: org3ambassador.blockchaincloudpoc.com
+        fabric_console: disabled
+        gitops:
+            branch: hello-fabric
+            chart_source: platforms/hyperledger-fabric/charts
+            email: hyewoncho17@gmail.com
+            git_protocol: https
+            git_repo: github.com/hwcho/bevel.git
+            git_url: https://github.com/hwcho/bevel.git
+            password: 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
+            private_key: /home/ubuntu/gitops/gitops
+            release_dir: platforms/hyperledger-fabric/releases/dev
+            username: hwcho
+        k8s:
+            config_file: /home/ubuntu/.kube/config
+            context: project-49ce1150-besu-cluster
+            region: eu-west-1
+        location: New York
+        name: store
+        org_status: new
+        organization: null
+        services:
+            ca:
+                grpc:
+                    port: 7054
+                name: ca
+                subject: /C=US/ST=New York/L=New York/O=Store/CN=ca.store-net.org3ambassador.blockchaincloudpoc.com
+                type: ca
+            peers:
+            -   chaincode:
+                    arguments: chaincode_args
+                    endorsements: ''
+                    lang: golang
+                    maindirectory: chaincode_main
+                    name: chaincode_name
+                    repository:
+                        branch: hello-fabric
+                        password: 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
+                        path: chaincode_src
+                        url: github.com/hwcho/bevel.git
+                        username: hwcho
+                    version: '1'
+                cli: disabled
+                couchdb:
+                    port: 5984
+                events:
+                    port: 7053
+                expressapi:
+                    port: 3000
+                    targetPort: 3000
+                gossippeeraddress: peer0.store-net:7051
+                grpc:
+                    port: 7051
+                name: peer0
+                peer: null
+                peerAddress: peer0.store-net.org3ambassador.blockchaincloudpoc.com:8443
+                restserver:
+                    port: 20001
+                    targetPort: 20001
+                type: anchor
+        state: New York
+        subject: O=Store,OU=Store,L=40.73/-74/New York,C=US
+        type: peer
+        vault:
+            root_token: s.NQN6bn4oN7ScNuLnwxB7USgx
+            secret_path: secret
+            url: http://127.0.0.1:9000
+    -   aws:
+            access_key: aws_access_key
+            secret_key: aws_secret_key
+        ca_data:
+            certificate: /file/server.crt
+            url: ca.warehouse-net.org2ambassador.blockchaincloudpoc.com:8443
+        cloud_provider: minikube
+        country: US
+        external_url_suffix: org2ambassador.blockchaincloudpoc.com
+        fabric_console: disabled
+        gitops:
+            branch: hello-fabric
+            chart_source: platforms/hyperledger-fabric/charts
+            email: hyewoncho17@gmail.com
+            git_protocol: https
+            git_repo: github.com/hwcho/bevel.git
+            git_url: https://github.com/hwcho/bevel.git
+            password: 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
+            private_key: /home/ubuntu/gitops/gitops
+            release_dir: platforms/hyperledger-fabric/releases/dev
+            username: hwcho
+        k8s:
+            config_file: /home/ubuntu/.kube/config
+            context: project-49ce1150-besu-cluster
+            region: eu-west-1
+        location: Boston
+        name: warehouse
+        org_status: new
+        organization: null
+        services:
+            ca:
+                grpc:
+                    port: 7054
+                name: ca
+                subject: /C=US/ST=Massachusetts/L=Boston/O=Warehouse/CN=ca.warehouse-net.org2ambassador.blockchaincloudpoc.com
+                type: ca
+            peers:
+            -   chaincode:
+                    arguments: chaincode_args
+                    endorsements: ''
+                    lang: golang
+                    maindirectory: chaincode_main
+                    name: chaincode_name
+                    repository:
+                        branch: hello-fabric
+                        password: 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
+                        path: chaincode_src
+                        url: github.com/hwcho/bevel.git
+                        username: hwcho
+                    version: '1'
+                cli: disabled
+                couchdb:
+                    port: 5984
+                events:
+                    port: 7053
+                expressapi:
+                    port: 3000
+                    targetPort: 3000
+                gossippeeraddress: peer0.warehouse-net:7051
+                grpc:
+                    port: 7051
+                name: peer0
+                peer: null
+                peerAddress: peer0.warehouse-net.org3ambassador.blockchaincloudpoc.com:8443
+                restserver:
+                    port: 20001
+                    targetPort: 20001
+                type: anchor
+        state: Massachusetts
+        subject: O=Warehouse,OU=Warehouse,L=42.36/-71.06/Boston,C=US
+        type: peer
+        vault:
+            root_token: s.NQN6bn4oN7ScNuLnwxB7USgx
+            secret_path: secret
+            url: http://127.0.0.1:9000
+    type: fabric
+    version: 2.2.2
+...
