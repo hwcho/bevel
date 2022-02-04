@@ -11,6 +11,12 @@
     path: "{{ GIT_DIR }}"
     state: directory
 
+- name: "Delete temp.yaml"
+  shell: |
+    cd "{{ GIT_DIR }}"
+    rm ./platforms/shared/configuration/temp.yaml
+  when: gitops.git_protocol == "ssh" or gitops.git_protocol == "https"     
+
 # Git push the new files, reset config files for local execution
 - name: "Execute git push for ssh"
   shell: |
@@ -19,7 +25,6 @@
     export GIT_SSH_COMMAND='ssh -i {{ gitops.private_key }}'
     git config user.email {{ gitops.email }}
     git config user.name {{ gitops.username }}
-    git --git-dir={{ GIT_DIR }}/.git rm .platforms/shared/configuration/temp.yaml
     git --git-dir={{ GIT_DIR }}/.git add -A .
     
     # To ignore a directory add it add reset path
@@ -45,7 +50,6 @@
     echo "---------------GIT PUSH---------------"
     git config user.email {{ gitops.email }}
     git config user.name {{ gitops.username }}
-    git --git-dir={{ GIT_DIR }}/.git rm .platforms/shared/configuration/temp.yaml
     git --git-dir={{ GIT_DIR }}/.git add -A .
     
     # To ignore a directory add it add reset path
