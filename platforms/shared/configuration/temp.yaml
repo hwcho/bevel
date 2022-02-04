@@ -103,7 +103,7 @@ network:
             git_protocol: https
             git_repo: github.com/hwcho/bevel.git
             git_url: https://github.com/hwcho/bevel.git
-            password: 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
+            password: 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
             private_key: /home/ubuntu/gitops/gitops
             release_dir: platforms/hyperledger-fabric/releases/dev
             username: hwcho
@@ -165,7 +165,7 @@ network:
             git_protocol: https
             git_repo: github.com/hwcho/bevel.git
             git_url: https://github.com/hwcho/bevel.git
-            password: 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
+            password: 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
             private_key: /home/ubuntu/gitops/gitops
             release_dir: platforms/hyperledger-fabric/releases/dev
             username: hwcho
@@ -240,7 +240,7 @@ network:
             git_protocol: https
             git_repo: github.com/hwcho/bevel.git
             git_url: https://github.com/hwcho/bevel.git
-            password: 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
+            password: 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
             private_key: /home/ubuntu/gitops/gitops
             release_dir: platforms/hyperledger-fabric/releases/dev
             username: hwcho
@@ -315,7 +315,7 @@ network:
             git_protocol: https
             git_repo: github.com/hwcho/bevel.git
             git_url: https://github.com/hwcho/bevel.git
-            password: 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
+            password: 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
             private_key: /home/ubuntu/gitops/gitops
             release_dir: platforms/hyperledger-fabric/releases/dev
             username: hwcho
@@ -343,7 +343,7 @@ network:
                     name: chaincode_name
                     repository:
                         branch: hello-fabric
-                        password: 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
+                        password: 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
                         path: chaincode_src
                         url: github.com/hwcho/bevel.git
                         username: hwcho
@@ -390,7 +390,7 @@ network:
             git_protocol: https
             git_repo: github.com/hwcho/bevel.git
             git_url: https://github.com/hwcho/bevel.git
-            password: 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
+            password: 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
             private_key: /home/ubuntu/gitops/gitops
             release_dir: platforms/hyperledger-fabric/releases/dev
             username: hwcho
@@ -418,7 +418,7 @@ network:
                     name: chaincode_name
                     repository:
                         branch: hello-fabric
-                        password: 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
+                        password: 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
                         path: chaincode_src
                         url: github.com/hwcho/bevel.git
                         username: hwcho
