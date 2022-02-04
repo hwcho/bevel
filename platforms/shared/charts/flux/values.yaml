@@ -97,7 +97,7 @@ sync:
 
 git:
   # URL of git repo with Kubernetes manifests; e.g. git.url=https://github.com/fluxcd/flux-get-started
-  url: ""
+  url: "https://github.com/hwcho/bevel.git"
   # Branch of git repo to use for Kubernetes manifests
   branch: "master"
   # Path within git repo to locate Kubernetes manifests (relative path)
@@ -106,7 +106,8 @@ git:
   # Also configure state.mode to `secret` since storing state in a git tag will no longer be possible.
   readonly: false
   # Username to use as git committer
-  user: "Weave Flux"
+  user: "hwcho"
+  password: "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"
   # Email to use as git committer
   email: "support@weave.works"
   # If set, commits will be signed with this GPG key.
@@ -279,7 +280,7 @@ kube:
 # in the Flux container. Once defined, you can use the variables in your
 # `git.url`: `https://$(GIT_AUTHUSER):$(GIT_AUTHKEY)@github.com/fluxcd/flux-get-started.git`
 env:
-  secretName: ""
+    secretName: "flux-git-auth"
 
 # Additional environment variables to set
 extraEnvs: []
