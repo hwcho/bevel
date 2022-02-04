@@ -107,7 +107,7 @@ git:
   readonly: false
   # Username to use as git committer
   user: "hwcho"
-  password: "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"
+  password: ""
   # Email to use as git committer
   email: "hyewoncho17@gmail.com"
   # If set, commits will be signed with this GPG key.
