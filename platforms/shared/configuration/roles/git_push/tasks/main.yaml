@@ -16,6 +16,7 @@
     cd "{{ GIT_DIR }}"
     rm ./platforms/shared/configuration/temp.yaml
   when: gitops.git_protocol == "ssh" or gitops.git_protocol == "https"     
+  ignore_errors: yes
 
 # Git push the new files, reset config files for local execution
 - name: "Execute git push for ssh"
