@@ -99,7 +99,7 @@ git:
   # URL of git repo with Kubernetes manifests; e.g. git.url=https://github.com/fluxcd/flux-get-started
   url: "https://github.com/hwcho/bevel.git"
   # Branch of git repo to use for Kubernetes manifests
-  branch: "master"
+  branch: "hello-fabric"
   # Path within git repo to locate Kubernetes manifests (relative path)
   path: ""
   # Set to `true` if you intend for Flux to not be able to push changes to git.
@@ -107,9 +107,9 @@ git:
   readonly: false
   # Username to use as git committer
   user: "hwcho"
-  password: "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"
+  password: "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"
   # Email to use as git committer
-  email: "support@weave.works"
+  email: "hyewoncho17@gmail.com"
   # If set, commits will be signed with this GPG key.
   signingKey: ""
   # If set, the signatures of the sync tag and commits will be verified.
