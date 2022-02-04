@@ -23,6 +23,7 @@
 *.tmproj
 **/.gradle/*
 # Ignore folder named 'build'
+.platforms/shared/configuration/temp.yaml
 **/*build*/
 **/crypto-config*/*
 **/go/*
