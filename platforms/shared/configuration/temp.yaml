@@ -103,7 +103,7 @@ network:
             git_protocol: https
             git_repo: github.com/hwcho/bevel.git
             git_url: https://github.com/hwcho/bevel.git
-            password: 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
+            password: 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
             private_key: /home/ubuntu/gitops/gitops
             release_dir: platforms/hyperledger-fabric/releases/dev
             username: hwcho
@@ -165,7 +165,7 @@ network:
             git_protocol: https
             git_repo: github.com/hwcho/bevel.git
             git_url: https://github.com/hwcho/bevel.git
-            password: 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
+            password: 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
             private_key: /home/ubuntu/gitops/gitops
             release_dir: platforms/hyperledger-fabric/releases/dev
             username: hwcho
@@ -240,7 +240,7 @@ network:
             git_protocol: https
             git_repo: github.com/hwcho/bevel.git
             git_url: https://github.com/hwcho/bevel.git
-            password: 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
+            password: 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
             private_key: /home/ubuntu/gitops/gitops
             release_dir: platforms/hyperledger-fabric/releases/dev
             username: hwcho
@@ -315,7 +315,7 @@ network:
             git_protocol: https
             git_repo: github.com/hwcho/bevel.git
             git_url: https://github.com/hwcho/bevel.git
-            password: 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
+            password: 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
             private_key: /home/ubuntu/gitops/gitops
             release_dir: platforms/hyperledger-fabric/releases/dev
             username: hwcho
@@ -390,7 +390,7 @@ network:
             git_protocol: https
             git_repo: github.com/hwcho/bevel.git
             git_url: https://github.com/hwcho/bevel.git
-            password: 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
+            password: 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
             private_key: /home/ubuntu/gitops/gitops
             release_dir: platforms/hyperledger-fabric/releases/dev
             username: hwcho
