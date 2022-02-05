@@ -123,7 +123,7 @@ git:
   # Period at which to poll git repo for new commits
   pollInterval: "5m"
   # Duration after which git operations time out
-  timeout: "100s"
+  timeout: "300s"
   # The secret name can be used to supply your own SSH key, instead of
   # relying on Flux to generate one for you:
   # 1. Generate a SSH key named identity:
