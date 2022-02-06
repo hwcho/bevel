@@ -8,7 +8,7 @@ metadata:
 spec:
   releaseName: supplychain-cacerts-job
   chart:
-    git: git@github.com:hwcho/bevel
+    git: https://github.com/hwcho/bevel.git
     ref: hello-fabric
     path: platforms/hyperledger-fabric/charts/generate_cacerts
     secretRef:
