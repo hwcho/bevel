@@ -109,6 +109,8 @@ spec:
                 --data '{"type": "kubernetes"}' \
                 ${VAULT_ADDR}/v1/sys/auth/${KUBERNETES_AUTH_PATH}
 
+                echo "authpath Created url: ${VAULT_ADDR}/v1/sys/auth/${KUBERNETES_AUTH_PATH}"
+
                 while IFS= read -r line
                 do
                   echo "$line\n"
@@ -116,6 +118,10 @@ spec:
 
                 KUBE_SA_CRT_ONELINE=$(cat ca_formatted.txt)
                 export REVIEWER_TOKEN=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token);
+
+                echo "KUBERNETES_URL: ${KUBERNETES_URL}"
+                echo "KUBE_SA_CRT_ONELINE: ${KUBE_SA_CRT_ONELINE}"
+                echo "REVIEWER_TOKEN: ${REVIEWER_TOKEN}"
 
                 # This echo get the certificate for the cluster
                 echo "
@@ -125,6 +131,7 @@ spec:
                     \"kubernetes_ca_cert\": \"${KUBE_SA_CRT_ONELINE}\"
                   }" > payload.json
 
+           
                 # This command writtes the Service Account token to the vault for Organisations
                 curl \
                 --header "X-Vault-Token: $ROOT_TOKEN" \
@@ -132,10 +139,14 @@ spec:
                 --data @payload.json \
                 ${VAULT_ADDR}/v1/auth/${KUBERNETES_AUTH_PATH}/config
 
+                echo "Vault auth config writed path: ${VAULT_ADDR}/v1/auth/${KUBERNETES_AUTH_PATH}/config"
+
                 # Check auth
                 response_status=$(curl -s -o /dev/null -w "%{http_code}" \
                 --header "X-Vault-Token: $ROOT_TOKEN" \
                 ${VAULT_ADDR}/v1/auth/${KUBERNETES_AUTH_PATH}/config);
+
+                echo "check vault auth response: ${response_status}"
 
                 rm payload.json
 
