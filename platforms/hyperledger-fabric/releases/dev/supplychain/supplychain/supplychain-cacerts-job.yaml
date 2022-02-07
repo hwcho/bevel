@@ -11,6 +11,8 @@ spec:
     git: https://github.com/hwcho/bevel.git
     ref: hello-fabric
     path: platforms/hyperledger-fabric/charts/generate_cacerts
+    secretRef:
+      name: flux-git-auth      
   values:
     metadata:
       name: supplychain
