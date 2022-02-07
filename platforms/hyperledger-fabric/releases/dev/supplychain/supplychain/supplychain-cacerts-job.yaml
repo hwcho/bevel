@@ -22,7 +22,7 @@ spec:
 
     vault:
       role: vault-role
-      address: http://127.0.0.1:9000
+      address: http://172.19.213.159:9000
       authpath: devsupplychain-net-auth
       secretcryptoprefix: secret/data/crypto/ordererOrganizations/supplychain-net/ca
       secretcredentialsprefix: secret/data/credentials/supplychain-net/ca/supplychain
