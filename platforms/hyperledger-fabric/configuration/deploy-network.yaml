@@ -55,6 +55,9 @@
         name: "setup/vault_kubernetes"
       vars:
         component_name: "{{ item.name | lower }}-net"
+        component_auth: "{{ network.env.type }}{{ item.name | lower }}-net-auth"
+        component_ns: "{{ item.name | lower }}-net" 
+        component_path: "{{ item.name | lower }}/"
         kubernetes: "{{ item.k8s }}"
         vault: "{{ item.vault }}"
         component_type: "{{ item.type | lower }}"

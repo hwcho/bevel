@@ -28,6 +28,8 @@
     kubernetes: "{{ item.k8s }}"
     check: "docker_credentials"
 
+
+
 #############################################################################################
 # This task creates secrets for the root token
 - name: "Create vault token secret"
