@@ -8,16 +8,19 @@ metadata:
   #Provide organization's name
   #Eg. namespace: org1
   name: supplychain
-  #Provide organization's type (orderer or peer)
-  #Eg. namespace: orderer
-  component_type: orderer
-  #Provide the namespace for organization's peer
+  #Provide organization's component_name
   #Eg. namespace: org1-net
+  component_name: supplychain-net
+  #Provide the namespace for organization's peer
+  #Eg. namespace: org1-example-com
   namespace: supplychain-net
   images:
+    #Provide the valid image name and version for fabric tools
+    #Eg. fabric-tools: hyperledger/fabrictools:1.4.0
+    fabrictools: hyperledger/fabric-tools:2.2.2
     #Provide the valid image name and version to read certificates from vault server
     #Eg.alpineutils: hyperledgerlabs/alpine-utils:1.0
-          alpineutils: index.docker.io/hyperledgerlabs/alpine-utils:1.0
+    alpineutils:  index.docker.io/hyperledgerlabs/alpine-utils:1.0
   #Provide the custom labels
   #NOTE: Provide labels other than name, release name , release service, chart version , chart name , app.
   #Eg. labels:
@@ -25,24 +28,17 @@ metadata:
   labels:
 
 vault:
-  #Provide the admin service account name
-  #Eg. reviewer_service: vault-reviewer
-  reviewer_service: vault-reviewer
   #Provide the vaultrole for an organization
   #Eg. vaultrole: org1-vault-role
   role: vault-role
   #Provide the vault server address
   #Eg. vaultaddress: http://Vault-884963190.eu-west-1.elb.amazonaws.com
-  address: http://172.19.213.159:9000
+  address: http://127.0.0.1:9000
   #Provide the kubernetes auth backed configured in vault for an organization
   #Eg. authpath: fra-demo-hlkube-cluster-org1
   authpath: devsupplychain-net-auth
-  #Provide the vault policy name
-  #Eg. policy: vault-crypto-orderer-net-org1-ro
-  policy: vault-crypto-orderer-supplychain-net-ro
-  #Provide the value for vault secretprefix
-  #Eg. adminsecretprefix: secret/...
-  secret_path: secret
+  secretcryptoprefix: secret/data/crypto/ordererOrganizations/supplychain-net/ca
+  secretcredentialsprefix: secret/data/credentials/supplychain-net/ca/supplychain
   #Provide the serviceaccountname for vault
   #Eg. serviceaccountname: vault-auth
   serviceaccountname: vault-auth
@@ -51,10 +47,8 @@ vault:
   imagesecretname: regcred
   #Kuberenetes secret for vault ca.cert
   #Enable or disable TLS for vault communication if value present or not
-  #Eg. tls: vaultca
-  tls:
 
-k8s:
-  #Provide the kubernetes host url
-  #Eg. kubernetes_url: https://10.3.8.5:6443
-  kubernetes_url: https://sailio.ncsoft.com/k8s/clusters/c-skj6r
+ca:
+  #Provide the subject of the services ca organization's
+  #Eg. subject: "/C=GB/ST=London/L=London/O=Carrier/CN=org1-net"
+  subject:  /C=GB/ST=London/L=London/O=Orderer/CN=ca.supplychain-net.org1ambassador.blockchaincloudpoc.com

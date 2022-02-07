@@ -33,7 +33,7 @@ vault:
   role: vault-role
   #Provide the vault server address
   #Eg. vaultaddress: http://Vault-884963190.eu-west-1.elb.amazonaws.com
-  address: http://172.19.213.159:9000
+  address: http://127.0.0.1:9000
   #Provide the kubernetes auth backed configured in vault for an organization
   #Eg. authpath: fra-demo-hlkube-cluster-org1
   authpath: devsupplychain-net-auth
@@ -57,4 +57,4 @@ vault:
 k8s:
   #Provide the kubernetes host url
   #Eg. kubernetes_url: https://10.3.8.5:6443
-  kubernetes_url: https://sailio.ncsoft.com/k8s/clusters/c-skj6r
+  kubernetes_url: https://sailio.ncsoft.com/k8s/cluster/c-skj6r
