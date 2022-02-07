@@ -198,12 +198,18 @@ spec:
                 \"bound_service_account_namespaces\": \"${NAMESPACE}\", \
                 \"policies\": [\"${POLICY_NAME}\"], \"ttl\": \"1200s\"}" > payload.json
 
+                echo "VAULT SA: ${VAULT_SA}"
+                echo "NAMESPACE: ${NAMESPACE}"
+                echo "POLICY_NAME: ${POLICY_NAME}"
+
                 curl \
                 -s -o /dev/null -w "%{http_code}" \
                 --header "X-Vault-Token: $ROOT_TOKEN" \
                 --request POST \
                 --data @payload.json \
                 ${VAULT_ADDR}/v1/auth/${KUBERNETES_AUTH_PATH}/role/${VAULT_ROLE}
+
+                echo "create vault role path: ${VAULT_ADDR}/v1/auth/${KUBERNETES_AUTH_PATH}/role/${VAULT_ROLE}"
 
                 # Check role
                 response_status=$(curl -s -o /dev/null -w "%{http_code}" \
