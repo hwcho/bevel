@@ -11,8 +11,6 @@ spec:
     git: https://github.com/hwcho/bevel.git
     ref: hello-fabric
     path: platforms/hyperledger-fabric/charts/vault_kubernetes
-    secretRef:
-      name: flux-git-auth
   values:
     metadata:
       name: carrier
