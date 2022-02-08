@@ -156,7 +156,9 @@ spec:
               # Check if policy already created
               vault_policy_check=$(curl --header "X-Vault-Token: $ROOT_TOKEN" \
                 ${VAULT_ADDR}/v1/sys/policy/${POLICY_NAME} | jq -r '.name');
-              
+
+              echo "vault_policy_check: ${vault_policy_check}"
+
               if [ "$vault_policy_check" == 'null' ]; then
                 echo "vaultpolicy does not exist. Creating ..."
                 mkdir -p ${POLICIES_PATH}
@@ -170,6 +172,8 @@ spec:
                   --data @${POLICIES_PATH}/policies-config-orderer.json.tmpl \
                   ${VAULT_ADDR}/v1/sys/policy/${POLICY_NAME}
 
+                  echo "case orderer, vault policy) ${POLICIES_PATH}/policies-config-orderer.json.tmpl"
+
                 fi;
 
                 if [ $COMPONENT_TYPE == 'peer' ]; then
@@ -181,6 +185,8 @@ spec:
                   --data @${POLICIES_PATH}/policies-config-peer.json.tmpl \
                   ${VAULT_ADDR}/v1/sys/policy/${POLICY_NAME}
 
+                  echo "case peer, vault policy) ${POLICIES_PATH}/policies-config-orderer.json.tmpl"
+
                 fi;
 
                 # Check policy
@@ -188,8 +194,12 @@ spec:
                 --header "X-Vault-Token: $ROOT_TOKEN" \
                 ${VAULT_ADDR}/v1/sys/policy/${POLICY_NAME});
 
+                echo "check policy result: ${response_status}"
+
                 validateVaultResponse ${response_status};
               fi;
+
+              echo "vault_auth_check in here: ${vault_auth_check}"
 
               if [ "$vault_auth_check" == 'null' ]; then
                 echo "Need vault auth role"
