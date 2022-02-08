@@ -11,8 +11,6 @@ spec:
     git: https://github.com/hwcho/bevel.git
     ref: hello-fabric
     path: platforms/hyperledger-fabric/charts/vault_kubernetes
-    secretRef:
-      name: flux-git-auth      
   values:
     metadata:
       name: manufacturer
@@ -27,7 +25,7 @@ spec:
       address: http://172.19.213.159:9000
       authpath: devmanufacturer-net-auth
       policy: vault-crypto-peer-manufacturer-net-ro
-      secret_path: secret
+      secret_path: secretsv2
       serviceaccountname: vault-auth
       imagesecretname: regcred
     
