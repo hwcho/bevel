@@ -11,8 +11,6 @@ spec:
     git: https://github.com/hwcho/bevel.git
     ref: hello-fabric
     path: platforms/hyperledger-fabric/charts/generate_cacerts
-    secretRef:
-      name: flux-git-auth
   values:
     metadata:
       name: supplychain
@@ -26,8 +24,8 @@ spec:
       role: vault-role
       address: http://172.19.213.159:9000
       authpath: devsupplychain-net-auth
-      secretcryptoprefix: secret/data/crypto/ordererOrganizations/supplychain-net/ca
-      secretcredentialsprefix: secret/data/credentials/supplychain-net/ca/supplychain
+      secretcryptoprefix: secretsv2/data/crypto/ordererOrganizations/supplychain-net/ca
+      secretcredentialsprefix: secretsv2/data/credentials/supplychain-net/ca/supplychain
       serviceaccountname: vault-auth
       imagesecretname: regcred
       
